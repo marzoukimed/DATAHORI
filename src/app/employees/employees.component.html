@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="text-center">Employees List</h2>
+    </div>
+    <div class="panel-body">
+        <div class="search-hero">
+            <input type="text" name="search" [(ngModel)]="searchText"   >
+        
+            <button routerLink="/Add"  class="btn btn-info" style="margin-left: 10px">Add Employee</button>
+        </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>employee_name</th>
+            <th>employee_salary</th>
+            <th>employee_age</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+          <tr *ngFor="let emp of employees | paginate: { itemsPerPage: 10, currentPage: p } | filter:searchText">
+            <td>{{emp.employee_name}}</td>
+            <td>{{emp.employee_salary}}</td>
+            <td>{{emp.employee_age}}</td>
+            <td>
+                <button (click)="deleteData(emp.id)"  class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <pagination-controls class="text-center"  (pageChange)="p = $event"></pagination-controls>
+        </tbody>
+      </table>
+    </div>
+  </div>

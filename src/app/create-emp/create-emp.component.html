@@ -1,0 +1,24 @@
+<h3>Create Categorie</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="employee_name">employee_name</label>
+      <input type="text" class="form-control" id="employee_name" required [(ngModel)]="employee.employee_name" name="employee_name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">employee_salary</label>
+      <input type="text" class="form-control" id="employee_salary" required [(ngModel)]="employee.employee_salary" name="employee_salary">
+    </div>
+
+    <div class="form-group">
+        <label for="name">employee_age</label>
+        <input type="text" class="form-control" id="employee_age" required [(ngModel)]="employee.employee_age" name="employee_age">
+      </div>
+
+    
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
